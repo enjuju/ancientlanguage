@@ -22,6 +22,7 @@ function transcribe() {
     cw: "caw",
     cl: "ca",
     bw: "bew",
+    bf: "bef",
     jl: "jal",
     hw: "hiw",
     hl: "hil",
@@ -36,6 +37,7 @@ function transcribe() {
     tl: "tol",
     xj: "xij",
     xg: "xig",
+    rf: "rif",
   };
   while (i < word.length) {
     ind = alphabet.indexOf(word.charAt(i));
