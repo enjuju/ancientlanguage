@@ -45,7 +45,7 @@ function transcribe() {
     i++;
   }
   finale = result.replace(
-    /cw|bw|cl|jl|hw|hl|gw|gl|qw|ql|kb|ks|kz|kx|kq|kt|tl|xj|xg/gi,
+    /cw|bw|cl|jl|hw|hl|gw|gl|qw|ql|kb|ks|kz|kx|kq|kt|tl|xj|xg|rf/gi,
     function (matched) {
       return replacements[matched];
     }
