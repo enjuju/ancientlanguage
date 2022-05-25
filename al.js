@@ -11,7 +11,8 @@ function transcribe() {
   i = 0;
 
   result = "";
-  //bl, br, cl, cr, dr, fl, fr, gl, gr, pl, pr, qu, sc, sk, sl, sm, sn, sp, st, sw, tr, and tw,
+  //bl, br, cl, cr, dr, fl, fr, gl, gr, pl, pr, qu, sc, sk, sl, sm, sn, sp, st, sw, tr, tw,
+  //caw cl bew bl jl hw hl gw gl qw ql oa kb ks kw kz kx kq kt kr tl tr
   // A: C, J, L, V
   // E: B, F, P, Z
   // I: F, H, R, X
@@ -19,16 +20,34 @@ function transcribe() {
   // U: K, N, S, Q
   let replacements = {
     cw: "caw",
+    cl: "ca",
     bw: "bew",
+    jl: "jal",
+    hw: "hiw",
+    hl: "hil",
+    gw: "gow",
+    qw: "quw",
+    ql: "qul",
+    kb: "kub",
+    kz: "kuz",
+    kx: "kux",
+    kq: "kuq",
+    kt: "kut",
+    tl: "tol",
+    xj: "xij",
+    xg: "xig",
   };
   while (i < word.length) {
     ind = alphabet.indexOf(word.charAt(i));
     result = result + permuted.charAt(ind);
     i++;
   }
-  finale = result.replace(/cw|bw/gi, function (matched) {
-    return replacements[matched];
-  });
+  finale = result.replace(
+    /cw|bw|cl|jl|hw|hl|gw|gl|qw|ql|kb|ks|kz|kx|kq|kt|tl|xj|xg/gi,
+    function (matched) {
+      return replacements[matched];
+    }
+  );
   console.log(result);
   let newWords = document.getElementById("output");
   newWords.value = finale;
